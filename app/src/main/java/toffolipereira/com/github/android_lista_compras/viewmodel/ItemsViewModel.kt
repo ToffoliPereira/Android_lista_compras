@@ -11,15 +11,6 @@ import toffolipereira.com.github.android_lista_compras.data.ItemDao
 import toffolipereira.com.github.android_lista_compras.data.ItemDatabase
 import toffolipereira.com.github.android_lista_compras.model.ItemModel
 
-/**
- * Uma classe ViewModel que estende AndroidViewModel. Esta classe é responsável por gerenciar e preparar os dados para a UI.
- * Ela mantém uma referência para o DAO e um LiveData que contém a lista de itens.
- * A classe também fornece métodos para adicionar e remover itens.
- *
- * @author Ewerton Carreira
- * @version 1.0
- * @since 2023-03-01
- */
 class ItemsViewModel(application: Application) : AndroidViewModel(application) {
 
     // Referência para o DAO que será usado para acessar o banco de dados.
@@ -47,11 +38,6 @@ class ItemsViewModel(application: Application) : AndroidViewModel(application) {
         itemsLiveData = itemDao.getAll()
     }
 
-    /**
-     * Método para adicionar um novo item.
-     * Este método é chamado na thread IO, pois pode levar algum tempo para inserir o item no banco de dados.
-     * @param item O nome do novo item.
-     */
     fun addItem(item: String) {
         // Inicia uma nova corrotina no escopo do ViewModel. As corrotinas são leves e não
         // bloqueiam a thread principal.
@@ -66,11 +52,6 @@ class ItemsViewModel(application: Application) : AndroidViewModel(application) {
         }
     }
 
-    /**
-     * Método para remover um item.
-     * Este método é chamado na thread IO, pois pode levar algum tempo para remover o item do banco de dados.
-     * @param item O item a ser removido.
-     */
     fun removeItem(item: ItemModel) {
         // Inicia uma nova corrotina no escopo do ViewModel. As corrotinas são leves e não
         // bloqueiam a thread principal.

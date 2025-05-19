@@ -12,27 +12,11 @@ import toffolipereira.com.github.android_lista_compras.viewmodel.ItemsAdapter
 import toffolipereira.com.github.android_lista_compras.viewmodel.ItemsViewModel
 import toffolipereira.com.github.android_lista_compras.viewmodel.ItemsViewModelFactory
 
-/**
- * A activity principal da aplicação.
- * Esta activity é responsável por exibir a lista de itens e fornecer uma interface para adicionar novos itens à lista.
- * A activity usa um `ItemsViewModel` para interagir com o banco de dados.
- *
- * @property viewModel O ViewModel usado para interagir com o banco de dados.
- * @author Ewerton Carreira
- * @version 1.0
- * @since 2023-02-01
- */
 class MainActivity : AppCompatActivity() {
 
     // O ViewModel usado para interagir com o banco de dados.
     private lateinit var viewModel: ItemsViewModel
 
-    /**
-     * Chamado quando a activity é criada.
-     * Este método configura a interface do usuário e inicializa o ViewModel.
-     *
-     * @param savedInstanceState Se a activity está sendo recriada a partir de um estado salvo, este é o estado.
-     */
     override fun onCreate(savedInstanceState: Bundle?) {
         // Chama o método onCreate da superclasse para completar a criação da activity.
         super.onCreate(savedInstanceState)

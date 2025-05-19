@@ -103,7 +103,7 @@ Este método abstrato serve como um ponto de acesso para a classe DAO. Quando ch
 
 ## Model
 
-### ItemModdel
+### ItemModel
 Uma classe de modelo de dados que representa um item na lista de compras. Por conta da anotação **@Entity**, significa que ela representa uma tabela no banco de dados e cada instância representa uma linha na tabela.
 
 A classe é uma data class do Kotlin, o que significa que ela gera automaticamente métodos úteis, como equals(), hashCode() e toString().
@@ -171,7 +171,7 @@ O que o código faz:
 ## Viewmodel
 
 ### ItemsAdapter
-Uma classe Adapter que estende RecyclerView.Adapter. Esta classe é responsável por fornecer os dados, criar cada item na lista, mantér essa lista de ItemModel e um callback para quando um item é removido.
+Uma classe Adapter que estende `RecyclerView.Adapter`. Esta classe é responsável por fornecer os dados, criar cada item na lista, mantér essa lista de ItemModel e um callback para quando um item é removido.
 
 - **onItemRemoved:** Callback que é chamado quando um item é removido.
 - **items:** Lista de itens que serão exibidos no RecyclerView.
@@ -414,7 +414,7 @@ class MainActivity : AppCompatActivity() {
 ## Res
 
 ### Drawable
-Criamos um ícone para utilizar no botão excluir. O ícone é uma lixeira e o nome é **baseline_delete_24.xml**.
+Criamos um ícone para utilizar no botão excluir. O ícone é uma lixeira e o nome é `baseline_delete_24.xml`.
 
 O drawable também guarda outros ícones, como os que compõem a capa do app.
 
@@ -477,9 +477,9 @@ Aqui é criado os componentes que aparecem na lista.
 ## Build.gradle.kts
 Define plugins, dependências e configurações de build. É essencial para compilar, empacotar o app e incluir bibliotecas.
 
-Aqui existe um plugin necessário:
+Aqui existe um **plugin** necessário:
 
-**kotlin("kapt"):** Habilita o processamento de anotações, necessário para gerar código automático com bibliotecas como Room.
+`kotlin("kapt")`: Habilita o processamento de anotações, necessário para gerar código automático com bibliotecas como Room.
 
 ```
 plugins {
@@ -492,14 +492,14 @@ plugins {
 
 - Principais dependências:
 
-  - **lifecycle-livedata-ktx:** Suporte a LiveData com corrotinas, atualiza a UI de forma reativa.
-  - **recyclerview:** Lista rolável eficiente.
-  - **appcompat:** Compatibilidade com versões antigas do Android.
-  - **activity-ktx:** Extensões Kotlin para facilitar uso de corrotinas e LiveData em Activity.
-  - **room-runtime:** Runtime do Room para banco de dados local.
-  - **room-compiler (via kapt):** Gera código do Room com base em anotações.
-  - **room-ktx:** Extensões Kotlin para usar Room com corrotinas.
-  - **kotlinx-coroutines-android:** Permite uso de corrotinas para tarefas assíncronas.
+  - `lifecycle-livedata-ktx`: Suporte a LiveData com corrotinas, atualiza a UI de forma reativa.
+  - `recyclerview`: Lista rolável eficiente.
+  - `appcompat`: Compatibilidade com versões antigas do Android.
+  - `activity-ktx`: Extensões Kotlin para facilitar uso de corrotinas e LiveData em `Activity`.
+  - `room-runtime`: Runtime do Room para banco de dados local.
+  - `room-compiler` (via `kapt`): Gera código do Room com base em anotações.
+  - `room-ktx:` Extensões Kotlin para usar Room com corrotinas.
+  - `kotlinx-coroutines-android`: Permite uso de corrotinas para tarefas assíncronas.
   
 ```
 implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.3.1")
